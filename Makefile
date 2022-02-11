@@ -13,6 +13,6 @@ all: ${IMAGE_DIRS}
 # Build and tag a single image
 ${IMAGE_DIRS}:
 	$(eval IMAGE_NAME := $(subst /,-,$@))
-	docker build -t ${DOCKERHUB_OWNER}/${IMAGE_PREFIX}${IMAGE_NAME}:${IMAGES_TAG} -t ${DOCKERHUB_OWNER}/${IMAGE_PREFIX}${IMAGE_NAME}:latest --build-arg TAG=${IMAGE_PREFIX}${IMAGE_NAME} --build-arg GIT_SHA1=${GIT_SHA1} $@
-	docker push ${DOCKERHUB_OWNER}/${IMAGE_PREFIX}${IMAGE_NAME}:${IMAGES_TAG}
-	docker push ${DOCKERHUB_OWNER}/${IMAGE_PREFIX}${IMAGE_NAME}:latest
+	docker build -t ${secrets.DOCKERHUB_USERNAME}/${IMAGE_PREFIX}${IMAGE_NAME}:${IMAGES_TAG} -t ${secrets.DOCKERHUB_USERNAME}/${IMAGE_PREFIX}${IMAGE_NAME}:latest --build-arg TAG=${IMAGE_PREFIX}${IMAGE_NAME} --build-arg GIT_SHA1=${GIT_SHA1} $@
+	docker push ${secrets.DOCKERHUB_USERNAME}/${IMAGE_PREFIX}${IMAGE_NAME}:${IMAGES_TAG}
+	docker push ${secrets.DOCKERHUB_USERNAME}/${IMAGE_PREFIX}${IMAGE_NAME}:latest
