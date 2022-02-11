@@ -1,0 +1,39 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Simple Node API Template",
+  "main": "api/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./api/server.js",
+    "start:prod": "NODE_ENV=production node ./api/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^14.2.0",
+    "express": "^4.17.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "helmet": "^5.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.7",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  },
+  "engines": {
+    "node": ">16.0.0"
+  }
+}
