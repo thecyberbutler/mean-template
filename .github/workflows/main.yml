@@ -25,5 +25,5 @@ jobs:
     - name: Publish API Image
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/mean-template-api:latest
     
-    -name: Publish Web Image
+    - name: Publish Web Image
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/mean-template-web:latest
