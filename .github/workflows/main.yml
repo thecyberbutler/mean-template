@@ -21,3 +21,7 @@ jobs:
       
     - name: Build the Web image
       run: docker build ./web --tag ${{ secrets.DOCKERHUB_USERNAME }}/mean-template-web:latest
+
+    - name: Publish Images
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/mean-template-api:latest
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/mean-template-web:latest
