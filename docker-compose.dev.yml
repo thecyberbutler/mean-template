@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   web:
-    image: thecyberbutler/mean-template-web:latest
+    build: web
     container_name: web
     ports: 
       - "80:80"
@@ -10,7 +10,7 @@ services:
     depends_on:
       - api
   api:
-    image: thecyberbutler/mean-template-api:latest
+    build: node-api
     container_name: api
     networks:
       - internal
@@ -23,10 +23,6 @@ services:
     container_name: mongo
     networks:
       - internal
-    volumes:
-      - db-data
 
 networks:
   internal:
-volumes:
-  db-data:

@@ -21,6 +21,10 @@ app.use('/api/v1', apiv1);
 
 apiv1.use('/users', userRouter);
 
+apiv1.get('/test', (req, res) => {
+  res.json({ status: 'success' });
+});
+
 app.use(globalError);
 
 module.exports = app;
